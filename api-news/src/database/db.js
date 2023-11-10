@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDataBase = () => {
  console.log("Waiting connection to the database");
-  mongoose.connect(
-    "mongodb+srv://rafaelgomest:rafaelgomest@cluster0.whup8js.mongodb.net/",
+  mongoose.connect(process.env.MONGODB_URI,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(()=> console.log("MongoDBAtlas Connected"))
